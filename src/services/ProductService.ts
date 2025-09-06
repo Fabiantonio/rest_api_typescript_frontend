@@ -20,8 +20,7 @@ export async function addProduct(data: ProductData) {
     });
     if (result.success) {
       const url = `${import.meta.env.VITE_API_URL}/api/products`;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { data } = await axios.post(url, {
+      await axios.post(url, {
         name: result.output.name,
         price: result.output.price,
       });
@@ -93,8 +92,8 @@ export async function deleteProduct(id: Product["id"]) {
 export async function updateAvailability(id: Product["id"]) {
   try {
     const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
-    await axios.patch(url)
+    await axios.patch(url);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
