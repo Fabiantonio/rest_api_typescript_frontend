@@ -1,7 +1,6 @@
 import type { Product } from "../types";
 import {
   Form,
-  Link,
   useNavigate,
   type ActionFunctionArgs,
   redirect,

@@ -20,6 +20,7 @@ export async function addProduct(data: ProductData) {
     });
     if (result.success) {
       const url = `${import.meta.env.VITE_API_URL}/api/products`;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { data } = await axios.post(url, {
         name: result.output.name,
         price: result.output.price,
@@ -42,7 +43,6 @@ export async function getProducts() {
     } else {
       throw new Error("Invalid data");
     }
-    console.log(result);
   } catch (error) {
     console.log(error);
   }
@@ -58,7 +58,6 @@ export async function getProductsById(id: Product["id"]) {
     } else {
       throw new Error("Invalid data");
     }
-    console.log(result);
   } catch (error) {
     console.log(error);
   }
